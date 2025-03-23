@@ -88,3 +88,18 @@ After running a few tests at various levels, the logs are received directly.
 
 As for the logs file
 ![Project Screenshot](./projectImages/logs_file.png)
+
+## Unit Tests
+
+The unit tests have been maintained primarily on the logging microservice where it covered pretty much the basics ( logging sending method and the log formatting methods in the Log service)
+
+![Project Screenshot](./projectImages/unit_tests.png)
+
+## Finally
+In order to test in Development mode, a file .env must be created in both microservices which will contain the rabbitmq credentials.
+
+   ```.env
+RABBITMQ_USERNAME = guest
+RABBITMQ_PASSWORD = guest
+ ```
+
