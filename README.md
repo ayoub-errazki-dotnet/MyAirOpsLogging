@@ -96,7 +96,7 @@ The unit tests have been maintained primarily on the logging microservice where 
 ![Project Screenshot](./projectImages/unit_tests.png)
 
 ## Finally
-In order to test in Development mode, a file .env must be created in both microservices which will contain the rabbitmq credentials.
+To test in development mode, create a `.env` file in both microservices containing the RabbitMQ credentials:
 
    ```.env
 RABBITMQ_USERNAME = guest
