@@ -5,6 +5,5 @@ namespace LoggingMicroservice.Interfaces
     public interface IRabbitMQConnectionFactory
     {
         public IConnectionFactory? Connection();
-
     }
 }
