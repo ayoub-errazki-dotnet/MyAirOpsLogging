@@ -11,5 +11,6 @@ namespace MyAiropsLogging.Shared
         //Log Message
         [MaxLength(255)]
         public required string MessageTemplate { get; set; }
+        public string? CorrelationID {get;set;}
     }
 }

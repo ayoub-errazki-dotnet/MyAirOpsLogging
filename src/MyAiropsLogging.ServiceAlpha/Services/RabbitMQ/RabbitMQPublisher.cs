@@ -23,10 +23,13 @@ namespace LoggingMicroservice.RabbitMQ
 
                 using var channel = await connection.CreateChannelAsync();
                 await channel.QueueDeclareAsync(queue: queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);
+                var props = new BasicProperties();
                 string messageJson = JsonConvert.SerializeObject(message);
                 var body = Encoding.UTF8.GetBytes(messageJson);
-
-                await channel.BasicPublishAsync(exchange: "", routingKey: queueName, body: body);
+                var correlationId = Guid.NewGuid().ToString();
+                props.CorrelationId = correlationId;
+                
+                await channel.BasicPublishAsync(exchange: "", routingKey: queueName,true, basicProperties:  props, body: body);
 
                 Console.WriteLine("[x] Sent {0}", message);
 

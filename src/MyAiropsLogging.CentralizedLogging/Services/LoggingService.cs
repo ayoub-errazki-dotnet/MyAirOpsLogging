@@ -30,8 +30,10 @@ namespace MyAiropsLogging.CentralizedLogging.Services
 
             log.MessageTemplate = TruncateLog(log.MessageTemplate);
 
-            var logFormatted = $" ID : [{log.Id}] | {log.MessageTemplate}";
-
+            var CorrelationIDFormatted = !string.IsNullOrEmpty(log.CorrelationID)?$" With CorrelationID [{log.CorrelationID}]" : string.Empty;
+             
+            var logFormatted = $"  [{log.MessageTemplate}] {CorrelationIDFormatted}" ;
+        
             switch (log.Level)
             {
                 case LevelDto.Error:

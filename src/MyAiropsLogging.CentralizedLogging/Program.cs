@@ -54,9 +54,10 @@ consumers.ReceivedAsync += (model, ea) =>
     Console.WriteLine($"** Received Log {message}");
     var logMessage = JsonSerializer.Deserialize<LogMessageDto>(message);
 
-    if(logMessage != null)
+    if(logMessage != null){
+      logMessage.CorrelationID = ea.BasicProperties.CorrelationId;
     loggingService.LogMessage(logMessage);
-    
+    }
     return Task.CompletedTask;
 };
 

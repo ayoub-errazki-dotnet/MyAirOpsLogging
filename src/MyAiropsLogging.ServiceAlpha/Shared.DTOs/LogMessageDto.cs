@@ -8,6 +8,8 @@ namespace MyAiropsLogging.Shared
         public DateTime TimeStamp { get; set; } = DateTime.UtcNow;
         public LevelDto Level { get; set; }
 
+        public Guid CorrelationID {get;set;} = Guid.NewGuid();
+
         //Log Message
         [MaxLength(255)]
         public required string MessageTemplate { get; set; }
