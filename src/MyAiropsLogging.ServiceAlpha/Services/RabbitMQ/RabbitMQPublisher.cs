@@ -18,8 +18,13 @@ namespace LoggingMicroservice.RabbitMQ
         {
             try
             {
-                var connection = await _factory.Connection().CreateConnectionAsync() 
-                                ?? throw new NullReferenceException("RabbitMQ connection failed");                
+                var connectionFactory = _factory.Connection();
+                if (connectionFactory == null)
+                    throw new NullReferenceException("RabbitMQ connection factory is null");
+
+
+                var connection = await connectionFactory.CreateConnectionAsync()
+                                ?? throw new NullReferenceException("RabbitMQ connection failed");
 
                 using var channel = await connection.CreateChannelAsync();
                 await channel.QueueDeclareAsync(queue: queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);
@@ -28,8 +33,8 @@ namespace LoggingMicroservice.RabbitMQ
                 var body = Encoding.UTF8.GetBytes(messageJson);
                 var correlationId = Guid.NewGuid().ToString();
                 props.CorrelationId = correlationId;
-                
-                await channel.BasicPublishAsync(exchange: "", routingKey: queueName,true, basicProperties:  props, body: body);
+
+                await channel.BasicPublishAsync(exchange: "", routingKey: queueName, true, basicProperties: props, body: body);
 
                 Console.WriteLine("[x] Sent {0}", message);
 

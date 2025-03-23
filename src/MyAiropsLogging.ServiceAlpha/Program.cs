@@ -27,7 +27,7 @@ builder.Services.AddSingleton(typeof(IRabbitMQPublisher<>), typeof(RabbitMQPubli
 
 var app = builder.Build();
 
-app.MapGet("/", () =>  "Microservice ServiceAlpha on");
+app.MapGet("/", () =>  "Microservice Main on");
 
 app.MapControllers();
 
