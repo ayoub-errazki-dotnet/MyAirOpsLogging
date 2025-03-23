@@ -21,13 +21,9 @@ namespace LoggingMicroservice.RabbitMQ
                 var rabbitUserName = string.Empty;
                 var rabbitPassword = string.Empty;
                 
-                if (_env.IsDevelopment()){
-                    rabbitUserName = Environment.GetEnvironmentVariable("RABBITMQ_USERNAME")?? string.Empty;
-                    rabbitPassword = Environment.GetEnvironmentVariable("RABBITMQ_PASSWORD")?? string.Empty;
-                }
-                else
-                    rabbitPassword = Environment.GetEnvironmentVariable("RabbitMqPassword") ?? "";
-                    
+                rabbitUserName = Environment.GetEnvironmentVariable("RABBITMQ_USERNAME")?? string.Empty;
+                rabbitPassword = Environment.GetEnvironmentVariable("RABBITMQ_PASSWORD")?? string.Empty;
+
                 if (string.IsNullOrEmpty(rabbitPassword))
                     throw new InvalidOperationException("Invalid configuration, rabbitMQ password missing or empty.");
 
