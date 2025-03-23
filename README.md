@@ -15,7 +15,7 @@ The user makes an HTTP request to the **Main Service**, which simulates some pro
    ```bash
    GET [MainService]/api/main/process?simulate=success
    ```
-   
+
 2. **Response:**
    ```json
    {
@@ -30,7 +30,7 @@ The user makes an HTTP request to the **Main Service**, which simulates some pro
    ```bash
    GET [MainService]/api/main/process?simulate=warning
    ```
-   
+
 2. **Response:**
    ```json
    {
@@ -43,7 +43,6 @@ The user makes an HTTP request to the **Main Service**, which simulates some pro
 
 # The project's Structure
 ![Project Screenshot](./projectImages/project_structure.png)
-
 
 ## Starting RabbitMQ Server
 
@@ -64,11 +63,20 @@ That would be it for the server.
 
 Build and run the Logging Microservice:
 
+Build the solution
+   ```bash
+   dotnet build
+   ```
+then 
+
+   ```bash
+   dotnet run
+   ```
 ![Project Screenshot](./projectImages/build_run_loggingMS.png)
 
 ### Main Microservice
 
-Build and run the Main Microservice:
+Build and run the Main Microservice using the same commands:
 
 ![Project Screenshot](./projectImages/build_run_MainMS.png)
 
@@ -77,3 +85,6 @@ When the Main Microservice starts, it sends a log indicating that the server is 
 After running a few tests at various levels, the logs are received directly.
 
 ![Project Screenshot](./projectImages/logging_returned.png)
+
+As for the logs file
+![Project Screenshot](./projectImages/logs_file.png)
