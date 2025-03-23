@@ -5,7 +5,11 @@
 
 # dotenv files
 .env
-
+*/obj
+*.assets.json
+*.dgspec.json
+*.cache
+.nuget.cache
 # User-specific files
 *.rsuser
 *.suo
