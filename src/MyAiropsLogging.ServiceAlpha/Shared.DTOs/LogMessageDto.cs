@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace MyAiropsLogging.Shared
 {
     public class LogMessageDto
@@ -9,4 +11,10 @@ namespace MyAiropsLogging.Shared
         //Log Message
         [MaxLength(255)]
         public required string MessageTemplate { get; set; }
+
+        public override string ToString()
+        {
+            return $"Log {Id} [{TimeStamp}] Level : {Level} Content : {MessageTemplate}";
+        }
     }
+}

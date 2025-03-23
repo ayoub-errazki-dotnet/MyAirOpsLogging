@@ -1,4 +1,4 @@
-namespace MicroServiceClientA.Interfaces
+namespace LoggingMicroservice.Interfaces
 {
     public interface IRabbitMQPublisher<T>
     {
