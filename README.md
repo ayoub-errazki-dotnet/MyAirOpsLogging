@@ -98,6 +98,7 @@ The unit tests have been maintained primarily on the logging microservice where 
 ## Finally
 To test in development mode, create a `.env` file in both microservices containing the RabbitMQ credentials:
 
+default rabbitmq credentials below:
    ```.env
 RABBITMQ_USERNAME = guest
 RABBITMQ_PASSWORD = guest
