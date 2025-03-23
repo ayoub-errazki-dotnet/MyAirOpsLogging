@@ -25,7 +25,7 @@ namespace MyAiropsLogging.CentralizedLogging.Services
 
         public void LogMessage(LogMessageDto log)
         {
-            if (log == null)
+            if (log == null || string.IsNullOrEmpty(log.MessageTemplate))
                 throw new ArgumentException("Log Message is required");
 
             log.MessageTemplate = TruncateLog(log.MessageTemplate);
