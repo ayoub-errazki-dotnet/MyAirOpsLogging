@@ -41,6 +41,10 @@ The user makes an HTTP request to the **Main Service**, which simulates some pro
 
 ![Project Screenshot](./projectImages/http_req_success.png)
 
+# The project's Structure
+![Project Screenshot](./projectImages/project_structure.png)
+
+
 ## Starting RabbitMQ Server
 
 Using Docker, it's simple to start the RabbitMQ server:
