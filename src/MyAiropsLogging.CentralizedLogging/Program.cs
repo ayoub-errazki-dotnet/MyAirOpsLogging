@@ -22,8 +22,8 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 builder.Services.AddControllers();
 builder.Services.AddSingleton<Serilog.ILogger>(Log.Logger);
-
 builder.Services.AddSingleton<ILoggingService, LoggingService>();
+
 builder.Services.Configure<RabbitMQConfiguration>(builder.Configuration.GetSection("RabbitMQ"));
 builder.Services.AddSingleton<IConnectionFactory, ConnectionFactory>();
 builder.Services.AddSingleton<IRabbitMQConnectionFactory, RabbitMQConnection>();
