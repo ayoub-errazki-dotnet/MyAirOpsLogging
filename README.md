@@ -1,3 +1,4 @@
+
 # Microservices
 
 We have two simple microservices: the **Logging Microservice**, which remains on standby to receive incoming logs continuously, and another microservice named **AlphaService** (or **MainService**).
@@ -11,9 +12,10 @@ The user makes an HTTP request to the **Main Service**, which simulates some pro
 ### Example 1: Success Simulation
 
 1. **User Request:**
-   ```
+   ```bash
    GET [MainService]/api/main/process?simulate=success
    ```
+
 2. **Response:**
    ```json
    {
@@ -25,9 +27,10 @@ The user makes an HTTP request to the **Main Service**, which simulates some pro
 ### Example 2: Warning Simulation
 
 1. **User Request:**
-   ```
+   ```bash
    GET [MainService]/api/main/process?simulate=warning
    ```
+
 2. **Response:**
    ```json
    {
@@ -37,3 +40,51 @@ The user makes an HTTP request to the **Main Service**, which simulates some pro
    ```
 
 ![Project Screenshot](./projectImages/http_req_success.png)
+
+# The project's Structure
+![Project Screenshot](./projectImages/project_structure.png)
+
+## Starting RabbitMQ Server
+
+Using Docker, it's simple to start the RabbitMQ server:
+
+1. Pull and run the RabbitMQ container using the command:
+   ```bash
+   docker run -it --rm --name myrabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+   ```
+
+That would be it for the server.
+
+![Project Screenshot](./projectImages/runrabbitMQ.png)
+
+## Building and Running the Microservices
+
+### Logging Microservice
+
+Build and run the Logging Microservice:
+
+Build the solution
+   ```bash
+   dotnet build
+   ```
+then 
+
+   ```bash
+   dotnet run
+   ```
+![Project Screenshot](./projectImages/build_run_loggingMS.png)
+
+### Main Microservice
+
+Build and run the Main Microservice using the same commands:
+
+![Project Screenshot](./projectImages/build_run_MainMS.png)
+
+When the Main Microservice starts, it sends a log indicating that the server is up.
+
+After running a few tests at various levels, the logs are received directly.
+
+![Project Screenshot](./projectImages/logging_returned.png)
+
+As for the logs file
+![Project Screenshot](./projectImages/logs_file.png)
