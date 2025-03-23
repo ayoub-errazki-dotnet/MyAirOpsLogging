@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9824882C-425B-4703-BCFB-B56A7829D5BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAiropsLogging.CentralizedLogging", "src\MyAiropsLogging.CentralizedLogging\MyAiropsLogging.CentralizedLogging.csproj", "{C607EB42-F6B1-4A07-9B22-B0B5AAB59A93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAiropsLogging.ServiceAlpha", "src\MyAiropsLogging.ServiceAlpha\MyAiropsLogging.ServiceAlpha.csproj", "{C05153B1-9ECC-46FF-851F-733CF1C5C6E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{04FF6DEC-2F99-4913-B716-6DAB8D74E52B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAiropsLogging.CentralizedLogging.Tests", "tests\MyAiropsLogging.CentralizedLogging.Tests\MyAiropsLogging.CentralizedLogging.Tests.csproj", "{6E82EEB0-E75A-49A6-9493-EF387054AD08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAiropsLogging.ServiceAlpha.Tests", "tests\MyAiropsLogging.ServiceAlpha.Tests\MyAiropsLogging.ServiceAlpha.Tests.csproj", "{7D4DA013-7608-49BE-87C1-061972125D63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C607EB42-F6B1-4A07-9B22-B0B5AAB59A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C607EB42-F6B1-4A07-9B22-B0B5AAB59A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C607EB42-F6B1-4A07-9B22-B0B5AAB59A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C607EB42-F6B1-4A07-9B22-B0B5AAB59A93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C05153B1-9ECC-46FF-851F-733CF1C5C6E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C05153B1-9ECC-46FF-851F-733CF1C5C6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C05153B1-9ECC-46FF-851F-733CF1C5C6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C05153B1-9ECC-46FF-851F-733CF1C5C6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E82EEB0-E75A-49A6-9493-EF387054AD08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E82EEB0-E75A-49A6-9493-EF387054AD08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E82EEB0-E75A-49A6-9493-EF387054AD08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E82EEB0-E75A-49A6-9493-EF387054AD08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D4DA013-7608-49BE-87C1-061972125D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D4DA013-7608-49BE-87C1-061972125D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D4DA013-7608-49BE-87C1-061972125D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D4DA013-7608-49BE-87C1-061972125D63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C607EB42-F6B1-4A07-9B22-B0B5AAB59A93} = {9824882C-425B-4703-BCFB-B56A7829D5BE}
+		{C05153B1-9ECC-46FF-851F-733CF1C5C6E6} = {9824882C-425B-4703-BCFB-B56A7829D5BE}
+		{6E82EEB0-E75A-49A6-9493-EF387054AD08} = {04FF6DEC-2F99-4913-B716-6DAB8D74E52B}
+		{7D4DA013-7608-49BE-87C1-061972125D63} = {04FF6DEC-2F99-4913-B716-6DAB8D74E52B}
+	EndGlobalSection
+EndGlobal

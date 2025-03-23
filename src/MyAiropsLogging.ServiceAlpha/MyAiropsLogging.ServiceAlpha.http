@@ -1,0 +1,6 @@
+@MyAiropsLogging.ServiceAlpha_HostAddress = http://localhost:5187
+
+GET {{MyAiropsLogging.ServiceAlpha_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
