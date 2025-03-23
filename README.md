@@ -2,6 +2,8 @@
 
 We have two simple microservices: the **Logging Microservice**, which remains on standby to receive incoming logs continuously, and another microservice named **AlphaService** (or **MainService**).
 
+![Project Screenshot](./projectImages/main.png)
+
 The user makes an HTTP request to the **Main Service**, which simulates some processing and then logs the result based on the GET parameter `simulate` (`success`, `info`, `warning`, `fatal`). The log is then published based on its level, and the **Logging Microservice** intercepts the message and eventually logs it into a file.
 
 ## Detailed Process
@@ -33,3 +35,5 @@ The user makes an HTTP request to the **Main Service**, which simulates some pro
      "id": "8ef349e1-a415-4b8e-addd-6b83d2c322dd"
    }
    ```
+
+![Project Screenshot](./projectImages/http_req_success.png)
