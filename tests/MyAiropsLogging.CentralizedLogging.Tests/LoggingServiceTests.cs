@@ -1,8 +1,9 @@
-﻿using MyAiropsLogging.CentralizedLogging.Interfaces;
+﻿using MyAiropsLogging.Shared;
+using MyAiropsLogging.CentralizedLogging.Interfaces;
 using MyAiropsLogging.CentralizedLogging.Services;
-using Serilog;
+
 using Moq;
-using MyAiropsLogging.Shared;
+using Serilog;
 using Serilog.Events;
 
 namespace MyAiropsLogging.CentralizedLogging.Tests;
@@ -10,13 +11,16 @@ namespace MyAiropsLogging.CentralizedLogging.Tests;
 public class LoggingServiceTests
 {
     private readonly Mock<ILogger> _loggerMock;
+    private readonly Mock<IRabbitMQConnectionFactory> _rabbitConnectionFactory;
     private readonly ILoggingService _loggingService;
 
     public LoggingServiceTests()
     {
         _loggerMock = new Mock<ILogger>();
-        _loggingService = new LoggingService(_loggerMock.Object);
+        _rabbitConnectionFactory = new Mock<IRabbitMQConnectionFactory>();
+        _loggingService = new LoggingService(_loggerMock.Object, _rabbitConnectionFactory.Object);
     }
+
     [Fact]
     public void LogMessage_ShouldCallLogInfoMessage()
     {
@@ -63,7 +67,7 @@ public class LoggingServiceTests
     [Fact]
     public void LogMessage_ShouldThrowExceptionWhenMessageIsEmpty()
     {
-        var log = new LogMessageDto{MessageTemplate = string.Empty};
+        var log = new LogMessageDto { MessageTemplate = string.Empty };
         Action action = () => _loggingService.LogMessage(log);
         Assert.Throws<ArgumentException>(action);
     }

@@ -1,6 +1,6 @@
 using RabbitMQ.Client;
 
-namespace LoggingMicroservice.Interfaces
+namespace MyAiropsLogging.CentralizedLogging.Interfaces
 {
     public interface IRabbitMQConnectionFactory
     {

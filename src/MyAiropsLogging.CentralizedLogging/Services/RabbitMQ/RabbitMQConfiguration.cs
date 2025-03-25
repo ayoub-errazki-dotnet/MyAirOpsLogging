@@ -1,6 +1,6 @@
 ﻿using RabbitMQ.Client;
 
-namespace LoggingMicroservice.RabbitMQ
+namespace MyAiropsLogging.CentralizedLogging.RabbitMQ
 {
     public class RabbitMQConfiguration
     {

@@ -34,7 +34,7 @@ public class MainController : ControllerBase
             };
 
             var message = level == LevelDto.Information && (simulate == "success" || simulate == "info" || simulate == "information")
-                ? " Microservice (Main) processed the request successfully"
+                ? "Microservice (Main) processed the request successfully"
                 : level == LevelDto.Warning && simulate != "warning" ? $"Unknown request {simulate}" : $"Microservice (Main) raised a {simulate}";
 
             var logMessage = new LogMessageDto

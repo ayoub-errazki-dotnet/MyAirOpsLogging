@@ -1,12 +1,9 @@
-﻿using MassTransit.Configuration;
+﻿using LoggingMicroservice.Interfaces;
+using MyAiropsLogging.CentralizedLogging.Interfaces;
+
 using RabbitMQ.Client;
-using System.Net.Http.Json;
-using System.Text.Json.Serialization;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Text;
-using MassTransit.SagaStateMachine;
-using LoggingMicroservice.Interfaces;
 
 namespace LoggingMicroservice.RabbitMQ
 {

@@ -6,5 +6,6 @@ namespace MyAiropsLogging.CentralizedLogging.Interfaces
     {
         public void LogMessage(LogMessageDto logmessage);
         public string TruncateLog(string logmessage);
+        public Task ListenForIncomingLogs();
     }
 }
